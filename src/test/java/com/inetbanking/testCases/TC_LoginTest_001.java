@@ -1,5 +1,11 @@
 package com.inetbanking.testCases;
 
+import java.io.IOException;
+import java.time.Duration;
+
+import javax.xml.xpath.XPath;
+
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,9 +14,9 @@ import com.inetbanking.pageObjects.LoginPage;
 
 public class TC_LoginTest_001 extends BaseClass {
 	@Test
-	public void loginTest() {
-		driver.get(baseURL);
-		Logger.info("URL loaded successfully");
+	public void loginTest() throws IOException, InterruptedException {
+		
+		Logger.info("url loaded successfully");
 		LoginPage lp = new LoginPage(driver);
 		lp.setUsername(username);
 		Logger.info("Entered username properly");
@@ -18,14 +24,19 @@ public class TC_LoginTest_001 extends BaseClass {
 		Logger.info("Entered password properly");
 		lp.clickSubmit();
 		Logger.info("Submitted");
-		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+//		Thread.sleep(5000);
+	
+//		waitForElementPresent(driver,By.xpath(""),5);
 		if(driver.getTitle().equals("Guru99 Bank Manager HomePage")){
 			Assert.assertTrue(true);
 			Logger.info("Login test passed");
 		}
 		else {
+			captureScreen(driver, "loginTest");
 			Assert.assertTrue(false);
 			Logger.info("Login test failed");
+			
 		}
 		
 	}

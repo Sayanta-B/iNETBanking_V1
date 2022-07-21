@@ -5,16 +5,22 @@
 		<listener class-name="com.intbanking.utilities.Reporting"></listener>
 	</listeners>
 
-	<test name="bankingapp test firefox">
+	 <!--  <test name="bankingapp test firefox">
 		<parameter name="browser" value="firefox"/>
 		<classes>
 			<class name="com.inetbanking.testCases.TC_LoginTest_001" />
 		</classes>
-	</test>
-	<test name="bankingapp test chrome">
+	</test>  
+	  <test name="bankingapp test chrome">
 		<parameter name="browser" value="chrome"/>
 		<classes>
 			<class name="com.inetbanking.testCases.TC_LoginTest_001" />
+		</classes>
+	</test> -->
+	<test name="bankingapp test chrome">
+		<parameter name="browser" value="chrome"/>
+		<classes>
+			<class name="com.inetbanking.testCases.TC_LoginDataDriven002" />
 		</classes>
 	</test>
 </suite> 

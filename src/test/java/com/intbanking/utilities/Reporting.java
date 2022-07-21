@@ -47,7 +47,7 @@ public class Reporting extends TestListenerAdapter{
 		logger=extent.createTest(tr.getName()); // create new entry in th report
 		logger.log(Status.FAIL,MarkupHelper.createLabel(tr.getName(),ExtentColor.RED));//send failed test info
 		
-		String screenshotPath=System.getProperty("user dir"+"\\Scerrnshots"+tr.getName()+".png");
+		String screenshotPath=System.getProperty("user dir")+"\\Scerrnshots"+tr.getName()+".png";
 		
 		File f =new File(screenshotPath);
 		
