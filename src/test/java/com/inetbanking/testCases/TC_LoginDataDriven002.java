@@ -2,14 +2,13 @@ package com.inetbanking.testCases;
 
 import java.io.IOException;
 
+import com.inetbanking.base.BaseClass;
 import org.openqa.selenium.NoAlertPresentException;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.google.auto.common.GeneratedAnnotations;
 import com.inetbanking.pageObjects.LoginPage;
-import com.intbanking.utilities.XLUtils;
+import com.inetbanking.utilities.XLUtils;
 
 public class TC_LoginDataDriven002 extends BaseClass {
 	
@@ -50,7 +49,7 @@ public class TC_LoginDataDriven002 extends BaseClass {
 	}
 	
 	@DataProvider(name="Data")
-	String [][] getData() throws IOException{
+	Object [][] getData() throws IOException{
 		String path=System.getProperty("user.dir")+"/src/test/java/com/inetbanking/testData/Data.xlsx";
 		int rownum=XLUtils.getRowCount(path, "Sheet1");
 		int colcount = XLUtils.getCellCount(path,"Sheet1", 1);

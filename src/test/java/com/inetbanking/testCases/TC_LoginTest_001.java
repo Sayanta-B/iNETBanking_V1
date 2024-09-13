@@ -3,14 +3,11 @@ package com.inetbanking.testCases;
 import java.io.IOException;
 import java.time.Duration;
 
-import javax.xml.xpath.XPath;
-
-import org.openqa.selenium.By;
+import com.inetbanking.base.BaseClass;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.inetbanking.pageObjects.LoginPage;
-
 
 public class TC_LoginTest_001 extends BaseClass {
 	@Test
@@ -29,6 +26,7 @@ public class TC_LoginTest_001 extends BaseClass {
 	
 //		waitForElementPresent(driver,By.xpath(""),5);
 		if(driver.getTitle().equals("Guru99 Bank Manager HomePage")){
+
 			Assert.assertTrue(true);
 			Logger.info("Login test passed");
 		}
