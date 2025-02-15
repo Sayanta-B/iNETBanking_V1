@@ -2,6 +2,7 @@ package com.inetbanking.testCases;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Set;
 
 import com.inetbanking.base.BaseClass;
 import org.testng.Assert;
@@ -22,7 +23,6 @@ public class TC_LoginTest_001 extends BaseClass {
 		lp.clickSubmit();
 		Logger.info("Submitted");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-//		Thread.sleep(5000);
 	
 //		waitForElementPresent(driver,By.xpath(""),5);
 		if(driver.getTitle().equals("Guru99 Bank Manager HomePage")){
